@@ -47,8 +47,8 @@ public class FloridaInsurance {
 
         for (InsuranceEntry entry : list) {
             String county = entry.traits.get("county");
-            Double before = Double.parseDouble(String.valueOf(entry.traits.get("tiv_2011")));
-            Double after = Double.parseDouble(String.valueOf(entry.traits.get("tiv_2012")));
+            Double before = Double.parseDouble(entry.traits.get("tiv_2011"));
+            Double after = Double.parseDouble(entry.traits.get("tiv_2012"));
             Double gain = after - before;
             if (counties.containsKey(county))
                 counties.put(county, counties.get(county) + gain);
